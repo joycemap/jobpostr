@@ -1,0 +1,27 @@
+@layout('layouts.main')
+@section('title')
+JobPostr - View your Job
+@endsection
+
+@section('extracss')
+{{ style('forms') }}
+@endsection
+
+@section('content')
+<h1>See requested job</h1>
+
+ 
+  <div class="job-container2">
+    <div class="blank"></div>
+    <div class="job-info">
+
+      <h3>{{ job.title }}</h3>
+      <p>{{ job.description }}</p>
+      <ul>
+          <li><a href="{{ route('JobController.delete', { id: job.id }) }}">Delete</a></li>
+          <li><a href="{{ route('JobController.edit', { id: job.id }) }}">Edit</a></li>
+      </ul>
+    </div>
+  </div>
+ 
+@endsection
